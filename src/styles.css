@@ -1,0 +1,34 @@
+:root {
+  --bg: #f5f7fa; --surface: #fff; --text: #1c2430; --muted: #5d6b7c;
+  --line: #d9e0e8; --brand: #1b5fa8; --danger: #b42318; --ok: #1a7f4b;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #11161d; --surface: #1a212b; --text: #e8edf3; --muted: #9aa8b8; --line: #2d3846; --brand: #5aa2ee; --danger: #f07b70; --ok: #5cc690; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { margin: 0 0 16px; } h2 { margin: 0 0 12px; font-size: 1.1rem; }
+input, select, button { font: inherit; padding: 8px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--text); }
+button { background: var(--brand); color: #fff; border-color: var(--brand); cursor: pointer; }
+button.ghost { background: transparent; color: var(--brand); }
+button.danger { background: transparent; color: var(--danger); border-color: var(--danger); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.form { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; margin-bottom: 20px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+.actions { margin-top: 12px; display: flex; gap: 8px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+.toolbar input[type=search] { flex: 1; min-width: 220px; }
+.count { color: var(--muted); }
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th.sortable { cursor: pointer; user-select: none; }
+.row-actions { display: flex; gap: 6px; }
+.state { color: var(--muted); text-align: center; padding: 24px; }
+.banner { padding: 10px 14px; border-radius: 6px; margin-bottom: 14px; border: 1px solid; }
+.banner.error { color: var(--danger); border-color: var(--danger); }
+.banner.ok { color: var(--ok); border-color: var(--ok); }
+.pager { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 16px; }
